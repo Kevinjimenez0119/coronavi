@@ -1,0 +1,148 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>CONORAVIRUS</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="displey-flex  main-login position-fixed-full">
+
+
+    <div class="formulario contenedor-principal">
+
+
+      <h1 class="titulo">Con este registro nos ayudas a actuar frente al corona virus</h1>
+
+
+
+<form action="form/nuevo.php" method="post" id="formulario">
+
+  <input name="nombre" type="text" placeholder="nombres" class="input-text" id="nom">
+  <input name="apellido" type="text" placeholder="apellidos" class="input-text" id="ape">
+  <input name="telefono" type="text" placeholder="telefono" class="input-text" id="tel">
+  <input name="documento" type="text" placeholder="Numero de documento" class="input-text" id="doc">
+
+
+   <button type="submit" name="Ingresar" id="calc">Ingresar</button>
+
+</form>
+  <div class="displey-flex contenedor-selector">
+
+
+    <div class="selector">
+      <select name="tipo" class="input-selector" required="">
+        <option selected value="0">Cedula de ciudadania </option>
+        <option value="1" name="1">Tarjeta de identidad</option>
+        <option value="2" name="2">Cedula extrangera</option>
+      </select>
+
+      <div class="terminos">
+        <input type="checkbox" id="terminos" name="terminodeuso" value="ter">
+        <label for="termino1"> Acepto los terminos</label><br>
+
+      </div>
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+  </div>
+  </div>
+
+
+<!-- SCRIPT PARA CALCULAR IMC -->
+
+<script type="text/javascript">
+
+
+var fila1 +="<tr>
+<td>"+_nom+"</td>
+<td>"+_ape +"</td>";
+        if(document.getElementById('fiebre').checked){
+            var fieb = document.getElementById('fiebre').value;
+            var fila1 +="<tr>
+            <td>" "</td>
+            <td>""</td>
+            <td>"+ fieb +"</td>
+            <td>" "</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>"
+            "</tr>";
+        }
+        if(document.getElementById('d_garg').checked){
+            var dgarg = document.getElementById('d_garg').value;
+            var fila1 +="<tr>
+            <td>" "</td>
+            <td>""</td>
+            <td>""</td>
+            <td>"+ dgarg + "</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>"
+            "</tr>";
+        }
+        if(document.getElementById('c_nasal').checked){
+            var cnasal = document.getElementById('c_nasal').value;
+        }
+        if(document.getElementById('tos').checked){
+            var ts = document.getElementById('tos').value;
+        }
+        if(document.getElementById('d_respirar').checked){
+            var dres = document.getElementById('d_respirar').value;
+        }
+        if(document.getElementById('fatiga').checked){
+            var fatiga = document.getElementById('fatiga').value;
+        }
+        if(document.getElementById('escalofrio').checked){
+            var esc = document.getElementById('escalofrio').value;
+        }
+        if(document.getElementById('d_musculos').checked){
+            var dmus = document.getElementById('d_musculos').value;
+        }
+        if(document.getElementById('n_ant').checked){
+            var nant = document.getElementById('n_ant').value;
+        }
+
+        // var fila="<tr><td>"+_nom+"</td><td>"+_ape +"</td><td>"+ fieb +"</td><td>"+ dgarg +"</td><td>"+ cnasal +"</td><td>"+ ts +"</td><td>"+ dres +"</td><td>"+ fatiga +"</td><td>"+ esc +"</td><td>"+ dmus +"</td><td>"+ nant;
+
+        var btn = document.createElement("TR");
+        btn.innerHTML =fila1;
+        document.getElementById("tablax").appendChild(btn);
+calc.onclick = function(){
+  var todo_correcto = true;
+  if(document.getElementById('nom').value.length < 2 ){
+  todo_correcto = false;
+}
+if(document.getElementById('ape').value.length < 2 ){
+todo_correcto = false;
+}
+if(isNaN(document.getElementById('doc').value)){
+  todo_correcto = false;
+}
+if(!document.getElementById('terminos').checked){
+  todo_correcto = false;
+}
+if(!todo_correcto){
+alert('Algunos campos no están correctos, vuelva a revisarlos');
+}
+return todo_correcto;
+};
+</script>
+</body>
+</html>
